@@ -1,4 +1,4 @@
-package com.fairchild.algo;
+package com.fairchild.algo.stackqueue;
 
 public class NumericExpressionCaculator {
 
