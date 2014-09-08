@@ -17,7 +17,13 @@ public class Stack {
 		return true;
 	}
 
-	public Object pop(Object obj) {
+	public Object peek() {
+		if (isEmpty())
+			return null;
+		return data[size - 1];
+	}
+	
+	public Object pop() {
 		if (isEmpty())
 			return null;
 		--size;

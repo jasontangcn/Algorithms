@@ -10,7 +10,7 @@ public class Queue {
 		data = new Object[capacity];
 	}
 	
-	public boolean queue(Object obj) {
+	public boolean enqueue(Object obj) {
 		if(isFull()) return false;
 		data[tail] = obj;
 		tail = (tail + 1)%capacity;
