@@ -13,7 +13,7 @@ public class Queue {
 	public boolean queue(Object obj) {
 		if(isFull()) return false;
 		data[tail] = obj;
-		tail = ((tail + 1)%capacity);
+		tail = (tail + 1)%capacity;
 		return true;
 	}
 	
@@ -25,7 +25,7 @@ public class Queue {
 	}
 	
 	public boolean isFull() {
-		if(((tail + 1)%capacity) == head)
+		if((tail + 1)%capacity == head)
 			return true;
 		return false;
 	}
