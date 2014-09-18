@@ -44,9 +44,8 @@ public class QueueQuestion {
 			}
 		} while (!queue.isEmpty() || index < count);
 
-		
-		System.out.println("servantIdleTime" + servantIdleTime);
-		System.out.println("customerWaitingTime" + customerWaitingTime);
-		System.out.println("customersCount" + customersCount);
+		System.out.println("servantIdleTime: " + servantIdleTime);
+		System.out.println("customerWaitingTime: " + customerWaitingTime);
+		System.out.println("customersCount: " + customersCount);
 	}
 }

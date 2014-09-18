@@ -22,7 +22,7 @@ public class Stack {
 			return null;
 		return data[size - 1];
 	}
-	
+
 	public Object pop() {
 		if (isEmpty())
 			return null;
