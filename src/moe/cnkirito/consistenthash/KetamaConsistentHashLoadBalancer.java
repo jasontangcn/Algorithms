@@ -1,6 +1,5 @@
 package moe.cnkirito.consistenthash;
 
-
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
@@ -12,7 +11,8 @@ import java.util.TreeMap;
  * @date 2019/2/15
  */
 public class KetamaConsistentHashLoadBalancer implements LoadBalancer {
-
+    private final static int VIRTUAL_NODE_SIZE = 12;
+    private final static String VIRTUAL_NODE_SUFFIX = "-";
     private static MessageDigest md5Digest;
 
     static {
@@ -23,8 +23,16 @@ public class KetamaConsistentHashLoadBalancer implements LoadBalancer {
         }
     }
 
-    private final static int VIRTUAL_NODE_SIZE = 12;
-    private final static String VIRTUAL_NODE_SUFFIX = "-";
+    private static byte[] computeMd5(String k) {
+        MessageDigest md5;
+        try {
+            md5 = (MessageDigest) md5Digest.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new RuntimeException("clone of MD5 not supported", e);
+        }
+        md5.update(k.getBytes());
+        return md5.digest();
+    }
 
     @Override
     public Server select(List<Server> servers, Invocation invocation) {
@@ -69,17 +77,6 @@ public class KetamaConsistentHashLoadBalancer implements LoadBalancer {
                 | ((long) (bKey[1] & 0xFF) << 8)
                 | (bKey[0] & 0xFF);
         return rv;
-    }
-
-    private static byte[] computeMd5(String k) {
-        MessageDigest md5;
-        try {
-            md5 = (MessageDigest) md5Digest.clone();
-        } catch (CloneNotSupportedException e) {
-            throw new RuntimeException("clone of MD5 not supported", e);
-        }
-        md5.update(k.getBytes());
-        return md5.digest();
     }
 
 }

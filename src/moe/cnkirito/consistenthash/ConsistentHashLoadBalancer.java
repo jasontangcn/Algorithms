@@ -1,6 +1,5 @@
 package moe.cnkirito.consistenthash;
 
-
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -9,12 +8,10 @@ import java.util.TreeMap;
  * @author daofeng.xjf
  * @date 2019/2/15
  */
-public class ConsistentHashLoadBalancer implements LoadBalancer{
-
-    private HashStrategy hashStrategy = new FnvHashStrategy();
-
+public class ConsistentHashLoadBalancer implements LoadBalancer {
     private final static int VIRTUAL_NODE_SIZE = 10;
     private final static String VIRTUAL_NODE_SUFFIX = "&&";
+    private HashStrategy hashStrategy = new FnvHashStrategy();
 
     @Override
     public Server select(List<Server> servers, Invocation invocation) {

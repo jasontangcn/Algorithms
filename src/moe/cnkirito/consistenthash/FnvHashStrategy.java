@@ -7,7 +7,6 @@ package moe.cnkirito.consistenthash;
  * FNV1_32_HASH 算法
  */
 public class FnvHashStrategy implements HashStrategy {
-
     private static final long FNV_32_INIT = 2166136261L;
     private static final int FNV_32_PRIME = 16777619;
 

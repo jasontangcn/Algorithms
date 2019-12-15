@@ -19,16 +19,6 @@ public class KetamaHashStrategy implements HashStrategy {
         }
     }
 
-    @Override
-    public int getHashCode(String origin) {
-        byte[] bKey = computeMd5(origin);
-        long rv = ((long) (bKey[3] & 0xFF) << 24)
-                | ((long) (bKey[2] & 0xFF) << 16)
-                | ((long) (bKey[1] & 0xFF) << 8)
-                | (bKey[0] & 0xFF);
-        return (int) (rv & 0xffffffffL);
-    }
-
     /**
      * Get the md5 of the given key.
      */
@@ -41,5 +31,15 @@ public class KetamaHashStrategy implements HashStrategy {
         }
         md5.update(k.getBytes());
         return md5.digest();
+    }
+
+    @Override
+    public int getHashCode(String origin) {
+        byte[] bKey = computeMd5(origin);
+        long rv = ((long) (bKey[3] & 0xFF) << 24)
+                | ((long) (bKey[2] & 0xFF) << 16)
+                | ((long) (bKey[1] & 0xFF) << 8)
+                | (bKey[0] & 0xFF);
+        return (int) (rv & 0xffffffffL);
     }
 }

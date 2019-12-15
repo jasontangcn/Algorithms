@@ -5,7 +5,5 @@ package moe.cnkirito.consistenthash;
  * @date 2019/2/15
  */
 public interface HashStrategy {
-
     int getHashCode(String origin);
-
 }
