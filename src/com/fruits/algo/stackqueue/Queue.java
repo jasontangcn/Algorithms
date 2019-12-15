@@ -1,4 +1,4 @@
-package com.fairchild.algo.stackqueue;
+package com.fruits.algo.stackqueue;
 
 public class Queue {
 	private int capacity;

@@ -1,4 +1,4 @@
-package com.fairchild.algo.list;
+package com.fruits.algo.list;
 
 public class LinkedList {
 	public static ListNode reverse(ListNode head) {

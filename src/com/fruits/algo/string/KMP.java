@@ -1,4 +1,4 @@
-package com.fairchild.algo.string;
+package com.fruits.algo.string;
 
 public class KMP {
 

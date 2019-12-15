@@ -1,4 +1,4 @@
-package com.fairchild.algo.tree;
+package com.fruits.algo.tree;
 
 public class TreeNode {
 	private Object data;

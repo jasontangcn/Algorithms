@@ -1,4 +1,4 @@
-package com.fairchild.algo.stackqueue;
+package com.fruits.algo.stackqueue;
 
 public class QueueQuestion {
 	private static class CustomerService {

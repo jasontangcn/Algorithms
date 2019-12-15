@@ -1,4 +1,4 @@
-package com.fairchild.algo.tree;
+package com.fruits.algo.tree;
 
 public class TreeBuilder {
 	public static TreeNode build(char[] preOrder, int i, char[] midOrder, int j, int n) {

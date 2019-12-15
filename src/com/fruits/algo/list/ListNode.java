@@ -1,4 +1,4 @@
-package com.fairchild.algo.list;
+package com.fruits.algo.list;
 
 class ListNode {
 	private Object data;

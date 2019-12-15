@@ -1,4 +1,4 @@
-package com.fairchild.algo.stackqueue;
+package com.fruits.algo.stackqueue;
 
 public class NumericExpressionCaculator {
 	/*
@@ -254,7 +254,7 @@ public class NumericExpressionCaculator {
 
 			if (flag)
 				return new Number(num);
-
+			return null;
 		}
 	}
 

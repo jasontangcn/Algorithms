@@ -1,4 +1,4 @@
-package com.fairchild.algo.sort;
+package com.fruits.algo.sort;
 
 
 /*
